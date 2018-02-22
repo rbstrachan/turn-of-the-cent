@@ -24,7 +24,7 @@ while go_again:
 			print
 			print "You are " + str(input) + " years old right now. That means you'll turn 100 in the year " + str(age_100) + "."
 			print
-	elif int(input) >= 1900:
+	elif int(currentYear - 100) <= int(input) <= int(currentYear):
 		had_birthday = raw_input("Have you have your birthday this year? ")
 		if had_birthday == "no" or had_birthday == "n":
 			age_100 = int(input) + 100
@@ -43,13 +43,18 @@ while go_again:
 			print
 			print "What!? You are " + str(input) + " years old!? I don't think so. Please give a reasonable age - one that is below 100."
 			print
-		elif 1000 < int(input) < 1899:
+		elif 1000 < int(input) < int(currentYear - 101):
 			print
-			print "What!? You are " + str(currentYear - int(input)) + " years old!? I don't think so. Please give a reasonale birth year - one that is above 1900."
+			print "What!? You are " + str(currentYear - int(input)) + " years old!? I don't think so. Please give a reasonale birth year - one that is between " + str(currentYear - 100) + " and " + str(currentYear) + "."
+			print
+		elif int(input) > int(currentYear):
+			print
+			print "What!? By my calulations, you are not even born yet! Please give a reasonale birth year - one that is between " + str(currentYear - 100) + " and " + str(currentYear) + "."
 			print
 	
 	again = raw_input("Would you like to have another go? ")
 	if again.lower() == "no" or again.lower() == "n":
+		print "See you later. Thanks for playing."
 		go_again = False
 	else:
 		print
