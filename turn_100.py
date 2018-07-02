@@ -25,9 +25,9 @@ while go_again:
 			print("You are " + str(userInput) + " years old right now. That means you'll turn 100 in the year " + str(age_100) + ".")
 			print()
 	elif int(currentYear - 100) <= int(userInput) <= int(currentYear - 1):
-		had_birthday = input("Have you have your birthday this year? ")
+		had_birthday = input("Have you have your birthday this year? ").lower()
 		if had_birthday == "no" or had_birthday == "n":
-			age_100 = int(userInput) + 100
+			age_100 = int(userInput) + 101
 
 			print()
 			print("You are " + str(currentYear - int(userInput) - 1) + " years old right now. That means you'll turn 100 in the year " + str(age_100) + ".")
